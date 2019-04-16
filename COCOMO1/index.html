@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<body>
+<header>
+	<h1> COCOMO 1 </h1>
+	<!-- -->
+	<div>
+		<label for="kloc">kLOC (Количество строк кода)</label>
+		<input id="kloc" type="text" placeholder="50" required />
+		<label for="lang">Язык программирования</label>
+		<select id="lang">
+			<option value="1"> Ассемблер </option>
+			<option value="2.5"> С </option>
+			<option value="3"> Кобол </option>
+			<option value="3"> Фортран </option>
+			<option value="3.5"> Паскаль </option>
+			<option value="6"> С++ </option>
+			<option value="6"> Java </option>
+			<option value="6.5"> Ada 95 </option>
+			<option value="8.5"> Access </option>
+			<option value="11"> Delphi </option>
+			<option value="16"> COBRA </option>
+		</select><br>
+		<br>
+		<h2>Атрибуты программного продукта</h2>
+		<label for="RELY">RELY (Требуемая надежность)</label>
+		<select id="RELY">
+			<option value="0.75"> Очень низкий </option>
+			<option value="0.86"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="1.15"> Высокий </option>
+			<option value="1.4"> Очень высокий </option>
+		</select><br>
+		<label for="DATA">DATA (Размер базы данных)</label>
+		<select id="DATA">
+			<option value="0.94"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="1.08"> Высокий </option>
+			<option value="1.16"> Очень высокий </option>
+		</select><br>
+		<label for="CPLX">CPLX (Сложность продукта)</label>
+		<select id="CPLX">
+			<option value="0.7"> Очень низкий </option>
+			<option value="0.85"> Низкий </option>
+			<option value="1.0"> Номинальный </option>
+			<option value="1.15"> Высокий </option>
+			<option value="1.3"> Очень высокий </option>
+		</select><br>
+		<h2>Атрибуты компьютера</h2>
+		<label for="TIME">TIME (Огранечение времени выполнения)</label>
+		<select id="TIME">
+			<option value="1"> Номинальный </option>
+			<option value="1.11"> Высокий </option>
+			<option value="1.5"> Очень высокий </option>
+		</select><br>
+		<label for="STOR">STOR (Огранечение объема основной памяти)</label>
+		<select id="STOR">
+			<option value="1"> Номинальный </option>
+			<option value="1.06"> Высокий </option>
+			<option value="1.21"> Очень высокий </option>
+		</select><br>
+		<label for="VIRT">VIRT (Изменчивость виртуальной машины)</label>
+		<select id="VIRT">
+			<option value="0.87"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="1.15"> Высокий </option>
+			<option value="1.3"> Очень высокий </option>
+		</select><br>
+		<label for="TURN">TURN (Время реакции компьютера)</label>
+		<select id="TURN">
+			<option value="0.87"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="1.07"> Высокий </option>
+			<option value="1.15"> Очень высокий </option>
+		</select><br>
+		<h2>Атрибуты персонала</h2>
+		<label for="ACAP">ACAP (Способности аналитика)</label>
+		<select id="ACAP">
+			<option value="1.46"> Очень низкий </option>
+			<option value="1.19"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="0.86"> Высокий </option>
+			<option value="0.71"> Очень высокий </option>
+		</select><br>
+		<label for="AEXP">AEXP (Знание приложений)</label>
+		<select id="AEXP">
+			<option value="1.29"> Очень низкий </option>
+			<option value="1.15"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="0.91"> Высокий </option>
+			<option value="0.82"> Очень высокий </option>
+		</select><br>
+		<label for="PCAP">PCAP (Способности программиста)</label>
+		<select id="PCAP">
+			<option value="1.42"> Очень низкий </option>
+			<option value="1.17"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="0.86"> Высокий </option>
+			<option value="0.7"> Очень высокий </option>
+		</select><br>
+		<h2>Атрибуты проекта</h2>	
+		<label for="VEXP">VEXP (Знание виртуальной машины)</label>
+		<select id="VEXP">
+			<option value="1.21"> Очень низкий </option>
+			<option value="1.1"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="0.9"> Высокий </option>
+		</select><br>
+		<label for="LEXP">LEXP (Знание языка программирования)</label>
+		<select id="LEXP">
+			<option value="1.14"> Очень низкий </option>
+			<option value="1.07"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="0.95"> Высокий </option>
+		</select><br>
+		<label for="MODP">MODP (Использование современных методов)</label>
+		<select id="MODP">
+			<option value="1.24"> Очень низкий </option>
+			<option value="1.1"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="0.91"> Высокий </option>
+			<option value="0.82"> Очень высокий </option>
+		</select><br>
+		<label for="TOOL">TOOL (Использование программных инструментов)</label>
+		<select id="TOOL">
+			<option value="1.24"> Очень низкий </option>
+			<option value="1.1"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="0.91"> Высокий </option>
+			<option value="0.82"> Очень высокий </option>
+		</select><br>
+		<label for="SCED">SCED (Требуемые сроки разработки)</label>
+		<select id="SCED">
+			<option value="1.23"> Очень низкий </option>
+			<option value="1.08"> Низкий </option>
+			<option value="1"> Номинальный </option>
+			<option value="1.04"> Высокий </option>
+			<option value="1.1"> Очень высокий </option>
+		</select><br>
+		<br>
+		<label for="mode">Режим модели</label>
+		<select id="mode">
+			<option value="simple"> Обычный </option>
+			<option value="inter"> Промежуточный </option>
+			<option value="buildin"> Встроенный </option>
+		</select><br>
+		<br>
+		<button id="countBtn" type="submit">Рассчитать</button>
+	</div>
+	<div>
+		<h2>Декомпозиция работ по созданию ПО</h2>
+		<table>
+			<tr>
+				<th>
+					Вид деятельности
+				</th>
+				<th>
+					Бюджет
+				</th>
+			</tr>
+			<tr>
+				<td>
+					Анализ требований (4%)
+				</td>
+				<td id="tAn">	
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Проектирование продукта (12%)
+				</td>
+				<td id="tProj">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Программирование (44%)
+				</td>
+				<td id="tProg">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Тестирование (6%)
+				</td>
+				<td id="tTest">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Верификация и аттестация (14%)
+				</td>
+				<td id="tVer">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Канцелярия проекта (7%)
+				</td>
+				<td id="tOff">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Управление конфигурацией и обеспечение качества (7%)
+				</td>
+				<td id="tManag">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Создание руководств (6%)
+				</td>
+				<td id="tCreat">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Всего
+				</td>
+				<td id="tTotal">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="width: 300px; height: 300px;">
+		<canvas id="chart" width="300" height="300"></canvas>
+	</div>
+	<div>
+		<h2>Распределение работ и времени по стадиям жизненного цикла</h2>
+		<table>
+			<tr>
+				<th>Вид деятельности</th>
+				<th>Трудозатраты</th>
+				<th>Время</th>
+			</tr>
+			<tr>
+				<td>Планирование и определение требований</td>
+				<td id="j1"></td>
+				<td id="t1"></td>
+			</tr>
+			<tr>
+				<td>Проектирование продукта</td>
+				<td id="j2"></td>
+				<td id="t2"></td>
+			</tr>
+			<tr>
+				<td>Детальное проектирование</td>
+				<td id="j3"></td>
+				<td id="t3"></td>
+			</tr>
+			<tr>
+				<td>Кодирование и тестирование отдельных модулей</td>
+				<td id="j4"></td>
+				<td id="t4"></td>
+			</tr>
+			<tr>
+				<td>Интеграция и тестирование</td>
+				<td id="j5"></td>
+				<td id="t5"></td>
+			</tr>
+			<tr>
+				<td>Итого без планирования</td>
+				<td id="wPj"></td>
+				<td id="wPt"></td>
+			</tr>
+			<tr>
+				<td>Итого</td>
+				<td id="j"></td>
+				<td id="t"></td>
+			</tr>
+		</table>
+	</div>
+	<div style="width: 300px; height: 300px;">
+		<canvas id="timejob" width="300" height="300"></canvas>
+	</div>
+	<h3> Диаграмма привлечения сотрудников </h3>
+	<div style="width: 700px; height: 300px;">
+		<canvas id="dia"></canvas>
+	</div>
+</header>
+<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.4/randomColor.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
