@@ -2,14 +2,15 @@
 	let btn = document.getElementById('countBtn');
 
 	btn.addEventListener('click', ()=> {
-		let kLOC = + document.getElementById('kloc').value;
+		let kLOC = parseFloat(document.getElementById('kloc').value);
 		
 		let lang = document.getElementById('lang');
 		lang = lang.options[lang.selectedIndex].value;
-		
-		kLOC = (Math.round(kLOC / lang) * 1000) / 1000;
+
+		kLOC = (kLOC / lang).toFixed(2);
 		
 		const EAF = eaf();
+
 		let manMonth = 0;
 		let timeMonth = 0;	
 		
@@ -28,9 +29,8 @@
 			manMonth = 2.8 * EAF * Math.pow(kLOC, 1.2);
 			timeMonth = 2.5 * Math.pow(manMonth, 0.32);
 		}
-		
-		createTables(manMonth, timeMonth);
-		
+
+		createTables(manMonth.toFixed(2), timeMonth.toFixed(2));
 	});
 	
 	function eaf() {
@@ -68,7 +68,7 @@
 		let sced = document.getElementById('SCED');
 		sced = sced.options[sced.selectedIndex].value;
 		
-		return rely*data*cplx*time*stor*virt*turn*acap*aexp*pcap*vexp*lexp*modp*tool*sced;
+		return parseFloat(rely*data*cplx*time*stor*virt*turn*acap*aexp*pcap*vexp*lexp*modp*tool*sced).toFixed(2);
 	}
 	
 	function createTables(manMonth, timeMonth) {
@@ -80,10 +80,11 @@
 					0.07*manMonth, 
 					0.07*manMonth, 
 					0.06*manMonth];
-		budget = budget.map((elem) => { return Math.round(elem); });
+
+		budget = budget.map((elem) => { return elem.toFixed(2)});
 		
 		let tAn = document.getElementById('tAn');
-		tAn.innerHTML = budget[0]
+		tAn.innerHTML = budget[0];
 		let tProj = document.getElementById('tProj');
 		tProj.innerHTML = budget[1];
 		let tProg = document.getElementById('tProg');
@@ -99,22 +100,25 @@
 		let tCreat = document.getElementById('tCreat');
 		tCreat.innerHTML = budget[7];
 		let tTotal = document.getElementById('tTotal');
-		tTotal.innerHTML = Math.round(manMonth);
+		tTotal.innerHTML = manMonth;
 		
 		let job = [	0.18*manMonth, 
 					0.25*manMonth, 
 					0.26*manMonth, 
 					0.31*manMonth ];
-		job = job.map((elem) => { return Math.round(elem); });
+
 		let time = [ 0.36*timeMonth, 
 					 0.18*timeMonth,
 					 0.18*timeMonth,
 					 0.28*timeMonth ];
-		time = time.map((elem) => { return Math.round(elem); });
+
+		job = job.map((elem) => { return elem.toFixed(2)});
+		time = time.map((elem) => { return elem.toFixed(2)});
+
 		let j1 = document.getElementById('j1');
-		j1.innerHTML = Math.round(0.08 * manMonth);
+		j1.innerHTML = (0.08 * manMonth).toFixed(2);
 		let t1 = document.getElementById('t1');
-		t1.innerHTML = Math.round(0.36 * timeMonth);
+		t1.innerHTML = (0.36 * timeMonth).toFixed(2);
 		let j2 = document.getElementById('j2');
 		j2.innerHTML = job[0];
 		let t2 = document.getElementById('t2');
@@ -133,14 +137,14 @@
 		t5.innerHTML = time[3];	
 
 		let wPj = document.getElementById('wPj');
-		wPj.innerHTML = Math.round(manMonth);
+		wPj.innerHTML = manMonth;
 		let wPt = document.getElementById('wPt');
-		wPt.innerHTML = Math.round(timeMonth);
+		wPt.innerHTML = timeMonth;
 		
 		let j = document.getElementById('j');
-		j.innerHTML = Math.round(manMonth) + Math.round(0.08 * manMonth);
+		j.innerHTML = (+manMonth + 0.08 * manMonth).toFixed(2);
 		let t = document.getElementById('t');
-		t.innerHTML = Math.round(timeMonth) + Math.round(0.36 * timeMonth);
+		t.innerHTML = (+timeMonth + 0.36 * timeMonth).toFixed(2);
 		
 		(function createGraph() {	
 			var ctx = document.getElementById('chart').getContext('2d');
@@ -207,7 +211,7 @@
 			
 			let dataJT = [];
 			let current = 0;
-			for (let i=0, len=job.length; i < len; i++) {
+			for (let i = 0, len = job.length; i < len; i++) {
 				current += job[i]/time[i];
 				dataJT.push(Math.round(current));
 			}
