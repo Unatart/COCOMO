@@ -38,7 +38,7 @@ fpBtn.addEventListener('click', ()=> {
 
 medaBtn.addEventListener('click', ()=> {
     const p = countP();
-    document.getElementById('p').innerHTML = p;
+    document.getElementById('p').innerHTML = 'P = ' + p;
 
     const eArch = counteArch(p);
     let procRUSE = +document.getElementById('rusePr').value;
@@ -58,10 +58,10 @@ medaBtn.addEventListener('click', ()=> {
     const MdpJob = (size * ((100 - procRUSE)/100))/PROD ;
     const medaJob = 2.45*eArch*Math.pow(kLOC/1000, p);
 
-    document.getElementById('jobResultMeda').innerHTML = medaJob.toFixed(2);
-    document.getElementById('timeResultMeda').innerHTML = (3.0*Math.pow(medaJob, 0.33 + 0.2*(p-1.01))).toFixed(2);
-    document.getElementById('jobResultMdp').innerHTML = MdpJob;
-    document.getElementById('timeResultMdp').innerHTML = (3*Math.pow(MdpJob, 0.33+0.2*(p-1.01))).toFixed(2);
+    document.getElementById('jobResultMeda').innerHTML = 'Трудозатраты(чел/мес): ' +medaJob.toFixed(2) ;
+    document.getElementById('timeResultMeda').innerHTML = 'Время(мес):' + (3.0*Math.pow(medaJob, 0.33 + 0.2*(p-1.01))).toFixed(2);
+    document.getElementById('jobResultMdp').innerHTML = 'Трудозатраты(чел/мес):' + MdpJob;
+    document.getElementById('timeResultMdp').innerHTML = 'Время(мес):' + (3*Math.pow(MdpJob, 0.33+0.2*(p-1.01))).toFixed(2);
 });
 
 function countP(){
