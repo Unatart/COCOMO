@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title></title>
+</head>
+<body>
+<h1>COCOMO II</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Метод функциональных точек</h2>
+            <label for="fp1">Передачи данных</label>
+            <input id="fp1" type="number" min="0" max="5"/><br>
+            <label for="fp2">Распределенная обработка данных</label>
+            <input id="fp2" type="number" min="0" max="5"/><br>
+            <label for="fp3">Производительность</label>
+            <input id="fp3" type="number" min="0" max="5"/><br>
+            <label for="fp4">Эксплутационные ограничения</label>
+            <input id="fp4" type="number" min="0" max="5"/><br>
+            <label for="fp5">Частота транзакций</label>
+            <input id="fp5" type="number" min="0" max="5"/><br>
+            <label for="fp6">Оперативный ввод данных</label>
+            <input id="fp6" type="number" min="0" max="5"/><br>
+            <label for="fp7">Эффективность работы конечных пользователей</label>
+            <input id="fp7" type="number" min="0" max="5"/><br>
+            <label for="fp8">Оперативное обновление</label>
+            <input id="fp8" type="number" min="0" max="5"/><br>
+            <label for="fp9">Сложность обработки</label>
+            <input id="fp9" type="number" min="0" max="5"/><br>
+            <label for="fp10">Повторная используемость</label>
+            <input id="fp10" type="number" min="0" max="5"/><br>
+            <label for="fp11">Легкость инсталляции</label>
+            <input id="fp11" type="number" min="0" max="5"/><br>
+            <label for="fp12">Легкость эксплуатации</label>
+            <input id="fp12" type="number" min="0" max="5"/><br>
+            <label for="fp13">Количество возможных установок на различных платформах</label>
+            <input id="fp13" type="number" min="0" max="5"/><br>
+            <label for="fp14">Простота изменений</label>
+            <input id="fp14" type="number" min="0" max="5"/><br>
+            <button type="submit" id="fpBtn">Рассчитать</button>
+            <h2 id="fi"></h2>
+            <h2 id="ufp"></h2>
+            <h2 id="fp"></h2>
+        </div>
+        <div class="col">
+            <h4>Внешние вводы EI</h4>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th> 1-4 </th>
+                    <th> 5-15 </th>
+                    <th> >15 </th>
+                </tr>
+                <tr>
+                    <td> 0-1</td>
+                    <td><input id="EI00" type="text" /></td>
+                    <td><input id="EI01" type="text" /></td>
+                    <td><input id="EI02" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> 2 </td>
+                    <td><input id="EI10" type="text" /></td>
+                    <td><input id="EI11" type="text" /></td>
+                    <td><input id="EI12" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> >2 </td>
+                    <td><input id="EI20" type="text" /></td>
+                    <td><input id="EI21" type="text" /></td>
+                    <td><input id="EI22" type="text" /></td>
+                </tr>
+            </table>
+            <h4>Внешние выводы EO</h4>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th> 1-4 </th>
+                    <th> 5-19 </th>
+                    <th> >19 </th>
+                </tr>
+                <tr>
+                    <td> 0-1</td>
+                    <td><input id="EO00" type="text" /></td>
+                    <td><input id="EO01" type="text" /></td>
+                    <td><input id="EO02" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> 2-3 </td>
+                    <td><input id="EO10" type="text" /></td>
+                    <td><input id="EO11" type="text" /></td>
+                    <td><input id="EO12" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> >3 </td>
+                    <td><input id="EO20" type="text" /></td>
+                    <td><input id="EO21" type="text" /></td>
+                    <td><input id="EO22" type="text" /></td>
+                </tr>
+            </table>
+            <h4>Внутренние логические файлы ILF</h4>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th> 1-19 </th>
+                    <th> 20-50 </th>
+                    <th> >50 </th>
+                </tr>
+                <tr>
+                    <td> 1</td>
+                    <td><input id="ILF00" type="text" /></td>
+                    <td><input id="ILF01" type="text" /></td>
+                    <td><input id="ILF02" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> 2-5 </td>
+                    <td><input id="ILF10" type="text" /></td>
+                    <td><input id="ILF11" type="text" /></td>
+                    <td><input id="ILF12" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> >5 </td>
+                    <td><input id="ILF20" type="text" /></td>
+                    <td><input id="ILF21" type="text" /></td>
+                    <td><input id="ILF22" type="text" /></td>
+                </tr>
+            </table>
+            <h4>Внешние интерфейсные файлы EIF</h4>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th> 1-19 </th>
+                    <th> 20-50 </th>
+                    <th> >50 </th>
+                </tr>
+                <tr>
+                    <td> 1</td>
+                    <td><input id="EIF00" type="text" /></td>
+                    <td><input id="EIF01" type="text" /></td>
+                    <td><input id="EIF02" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> 2-5 </td>
+                    <td><input id="EIF10" type="text" /></td>
+                    <td><input id="EIF11" type="text" /></td>
+                    <td><input id="EIF12" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> >5 </td>
+                    <td><input id="EIF20" type="text" /></td>
+                    <td><input id="EIF21" type="text" /></td>
+                    <td><input id="EIF22" type="text" /></td>
+                </tr>
+            </table>
+            <h4>Внешние запросы EQ</h4>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th> 1-4 </th>
+                    <th> 5-19 </th>
+                    <th> >19 </th>
+                </tr>
+                <tr>
+                    <td> 0-1</td>
+                    <td><input id="EQ00" type="text" /></td>
+                    <td><input id="EQ01" type="text" /></td>
+                    <td><input id="EQ02" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> 2-3 </td>
+                    <td><input id="EQ10" type="text" /></td>
+                    <td><input id="EQ11" type="text" /></td>
+                    <td><input id="EQ12" type="text" /></td>
+                </tr>
+                <tr>
+                    <td> >3 </td>
+                    <td><input id="EQ20" type="text" /></td>
+                    <td><input id="EQ21" type="text" /></td>
+                    <td><input id="EQ22" type="text" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <h2>Факторы, влияющие на показатель степени в модели</h2>
+            <label for="prec">Новизна (PREC)</label>
+            <select id="prec">
+                <option value="6.2">Полное отсуствие прецедентов, полностью непредсказуемый проект</option>
+                <option value="4.96">Почти полное отсутсвие прецедентов, в значительной мере непредсказуемый проект</option>
+                <option value="3.72">Наличие некоторого количества прецедентов</option>
+                <option value="2.48">Общее знакомство с проектом</option>
+                <option value="1.24">Значительное знакомство с проектом</option>
+                <option value="0">Полное знакомство с проектом</option>
+            </select><br>
+            <label for="Flex">Гибкость разработки (FLEX)</label>
+            <select id="Flex">
+                <option value="5.07">Точный, строгий процесс разработки</option>
+                <option value="4.05">Случайные послабления в процессе</option>
+                <option value="3.04">Некоторые послабления в процессе</option>
+                <option value="2.03">Большей частью согласованный процесс</option>
+                <option value="1.01">Некоторое согласование процесса</option>
+                <option value="0">Заказчик определил только общие цели</option>
+            </select><br>
+            <label for="Risk">Разрешение рисков в архитектуре системы (RESL)</label>
+            <select id="Risk">
+                <option value="7">Малое (20%)</option>
+                <option value="5.65">Некоторое (40%)</option>
+                <option value="4.24">Частое (60%)</option>
+                <option value="2.83">В целом (75%)</option>
+                <option value="1.41">Почти полное (90%)</option>
+                <option value="0">Полное (100%)</option>
+            </select><br>
+            <label for="team">Сплоченность команды (TEAM)</label>
+            <select id="team">
+                <option value="5.48">Сильно затрудненное взаимодействие</option>
+                <option value="4.38">Несколько затрудненное взаимодействие</option>
+                <option value="3.29">Некоторая согласованность</option>
+                <option value="2.19">Повышенная согласованность</option>
+                <option value="1.1">Высокая согласованность</option>
+                <option value="0">Взаимодействие как в едином целом</option>
+            </select><br>
+            <label for="pmat">Уровень зрелости процесса разработки (PMAT)</label>
+            <select id="pmat">
+                <option value="7">Уровень 1 СММ</option>
+                <option value="6.24">Уровень 1+ СММ</option>
+                <option value="4.68">Уровень 2 СММ</option>
+                <option value="1.12">Уровень 3 СММ</option>
+                <option value="1.56">Уровень 7 СММ</option>
+                <option value="0">Уровень 5 СММ</option>
+            </select><br>
+            <h3 id="p"></h3>
+        </div>
+        <div class="col">
+            <h2>Модель ранней разработки архитектуры</h2>
+            <label for="PERS">PERS</label>
+            <select id="PERS">
+                <option value="1.62">Очень низкий</option>
+                <option value="1.26">Низкий</option>
+                <option value="1">Номинальный</option>
+                <option value="0.83">Высокий</option>
+                <option value="0.63">Очень высокий</option>
+                <option value="0.5">Сверхвысокий</option>
+            </select><br>
+            <label for="RCPX">RCPX</label>
+            <select id="RCPX">
+                <option value="0.6">Очень низкий</option>
+                <option value="0.83">Низкий</option>
+                <option value="1">Номинальный</option>
+                <option value="1.33">Высокий</option>
+                <option value="1.91">Очень высокий</option>
+                <option value="2.72">Сверхвысокий</option>
+            </select><br>
+            <label for="RUSE">RUSE</label>
+            <select id="RUSE">
+                <option value="0.95">Низкий</option>
+                <option value="1">Номинальный</option>
+                <option value="1.07">Высокий</option>
+                <option value="1.15">Очень высокий</option>
+                <option value="1.24">Сверхвысокий</option>
+            </select><br>
+            <label for="PDIF">PDIF</label>
+            <select id="PDIF">
+                <option value="0.87">Низкий</option>
+                <option value="1">Номинальный</option>
+                <option value="1.29">Высокий</option>
+                <option value="1.81">Очень высокий</option>
+                <option value="2.61">Сверхвысокий</option>
+            </select><br>
+            <label for="PREX">PREX</label>
+            <select id="PREX">
+                <option value="1.33">Очень низкий</option>
+                <option value="1.22">Низкий</option>
+                <option value="1">Номинальный</option>
+                <option value="0.87">Высокий</option>
+                <option value="0.74">Очень высокий</option>
+                <option value="0.62">Сверхвысокий</option>
+            </select><br>
+            <label for="FCIL">FCIL</label>
+            <select id="FCIL">
+                <option value="1.30">Очень низкий</option>
+                <option value="1.10">Низкий</option>
+                <option value="1">Номинальный</option>
+                <option value="0.87">Высокий</option>
+                <option value="0.73">Очень высокий</option>
+                <option value="0.62">Сверхвысокий</option>
+            </select><br>
+            <label for="SCED">SCED</label>
+            <select id="SCED">
+                <option value="1.43">Очень низкий</option>
+                <option value="1.14">Низкий</option>
+                <option value="1">Номинальный</option>
+                <option value="1">Высокий</option>
+                <option value="1">Очень высокий</option>
+            </select><br>
+            <button type="submit" id="meda">Рассчитать</button>
+            <h3 id="jobResultMeda"></h3>
+            <h3 id="timeResultMeda"></h3>
+        </div>
+        <div class="col">
+            <h2>Модель композиции изображения</h2>
+            <label for="rusePr">%RUSE:</label>
+            <input id="rusePr" type="text" placeholder="0"/><br>
+            <label for="exp">Опытность команды\разработчика</label>
+            <select id="exp">
+                <option value="4">Очень низкая</option>
+                <option value="7">Низкая</option>
+                <option value="13">Номинальная</option>
+                <option value="25">Высокая</option>
+                <option value="50">Очень высокая</option>
+            </select><br>
+            <h5>Экранные формы</h5>
+            <label for="sS">Простые</label>
+            <input id="sS" type="text" placeholder="0"/><br>
+            <label for="mS">Средние</label>
+            <input id="mS" type="text" placeholder="0"/><br>
+            <label for="hS">Сложные</label>
+            <input id="hS" type="text" placeholder="0"/><br>
+            <h5>Отчеты</h5>
+            <label for="sD">Простые</label>
+            <input id="sD" type="text" placeholder="0"/><br>
+            <label for="mD">Средние</label>
+            <input id="mD" type="text" placeholder="0"/><br>
+            <label for="hD">Сложные</label>
+            <input id="hD" type="text" placeholder="0"/><br>
+            <label for="mod">Модули на языках 3 поколения</label>
+            <input id="mod" type="text" placeholder="0"/><br>
+            <h3 id="jobResultMdp"></h3>
+            <h3 id="timeResultMdp"></h3>
+        </div>
+    </div>
+</div>
+<script async src="cocomo2.js"></script>
+</body>
+</html>
