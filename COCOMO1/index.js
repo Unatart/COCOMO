@@ -7,9 +7,10 @@
 		let lang = document.getElementById('lang');
 		lang = lang.options[lang.selectedIndex].value;
 
-		kLOC = (kLOC / lang).toFixed(2);
+		kLOC = (kLOC * lang).toFixed(2);
 		
 		const EAF = eaf();
+		console.log(EAF);
 
 		let manMonth = 0;
 		let timeMonth = 0;	
